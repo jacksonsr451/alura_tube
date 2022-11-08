@@ -1,3 +1,4 @@
+import { useState } from "react";
 import config from "../config.json"
 import Header from "../src/components/header"
 import Menu from "../src/components/menu"
@@ -6,6 +7,8 @@ import { GlobalStyle } from "../src/ui/globalStyles"
 
 
 const HomePage = () => {
+    const [filterValues, setFilterValues] = useState("");
+
     return (
         <>
             <GlobalStyle />
@@ -14,9 +17,9 @@ const HomePage = () => {
                 flexDirection: "column",
                 flex: 1,
             }}>
-                <Menu />
+                <Menu filterValues={filterValues} setFilterValues={setFilterValues}/>
                 <Header />
-                <TimeLine playlists={config.playlists}/>
+                <TimeLine filterValues={filterValues} playlists={config.playlists}/>
             </div>
         </>
     )

@@ -1,10 +1,11 @@
 import config from "../../config.json"
+import { StyledBanner } from "../ui/styledBanner"
 import { StyledHeader } from "../ui/styledHeader"
 
 const Header = () => {
     return (
         <StyledHeader>
-            <img src="" />
+            <StyledBanner bg={config.background_image} />
             <section className="user-info">
                 <img src={`https://github.com/${config.github}.png`} />
                 <div>
