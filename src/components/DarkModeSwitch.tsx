@@ -1,8 +1,8 @@
-import { useContext } from "react"
-import { ThemesColorsContext } from "../../src/providers/ThemesColorsProvider"
+import React, { useContext } from "react"
+import { ThemesColorsContext } from "../providers/ThemesColorsProvider"
 import { StyledDarkModeSwitch } from "../ui/styledDarkModeSwitch"
 
-const DarkModeSwitch = ({ onChanged }) => {    
+const DarkModeSwitch: React.FC = () => {    
     const theme = useContext(ThemesColorsContext)
 
     return (

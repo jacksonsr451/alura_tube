@@ -1,6 +1,7 @@
 import { StyledMenu } from "../ui/styledMenu"
 import Search from "./search"
 import DarkModeSwitch from "./DarkModeSwitch"
+import React, { Dispatch, SetStateAction } from "react"
 
 const Logo = () => {
     return (
@@ -16,8 +17,12 @@ const Logo = () => {
     )
 }
 
-const Menu = ({filterValues, setFilterValues}) => {
+interface Props {
+  filterValues: string,
+  setFilterValues: Dispatch<SetStateAction<string>>
+}
 
+const Menu: React.FC<Props> = ({filterValues, setFilterValues}) => {
     return (
         <StyledMenu>
             <div>

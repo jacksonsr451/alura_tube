@@ -1,11 +1,12 @@
+import React from "react"
 import config from "../../config.json"
 import { StyledBanner } from "../ui/styledBanner"
 import { StyledHeader } from "../ui/styledHeader"
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <StyledHeader>
-            <StyledBanner bg={config.background_image} />
+            <StyledBanner background={config.background_image} />
             <section className="user-info">
                 <img src={`https://github.com/${config.github}.png`} />
                 <div>

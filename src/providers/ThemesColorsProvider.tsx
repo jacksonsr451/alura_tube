@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react"
+import React, { createContext, useState, useEffect } from "react"
 import dark from "../ui/theme/dark"
 import light from "../ui/theme/light"
 
@@ -7,8 +7,21 @@ export const ThemesColorsContext = createContext({
     toggleTheme: () => {}
 }) 
 
+interface Props {
+    initialTheme: {
+        title: string;
+        colors: {
+            primary: string;
+            secundary: string;
+            border: string;
+            background: string;
+            text: string;
+        }
+    }
+    children: JSX.Element
+}
 
-const ThemesColorsProvider = (props) => {
+const ThemesColorsProvider: React.FC<Props> = (props) => {
     const [theme, setTheme] = useState(props.initialTheme)
 
 
