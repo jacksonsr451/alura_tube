@@ -39,7 +39,7 @@ export const StyledTimeline = styled.div`
           padding-top: 8px;
           display: block;
           padding-right: 24px;
-          color: ${({ theme }) => theme.textColorBase || "#222222"};
+          color: ${({ theme }) => theme.colors.text || "#222222"};
         }
       }
     }

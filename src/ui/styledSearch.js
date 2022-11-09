@@ -8,6 +8,8 @@ export const StyledSearch = styled.div`
   width: 100%;
   border-radius: 2px;
   overflow: hidden;
+
+  margin-right: 15px;
   
   input {
     width: 80%;

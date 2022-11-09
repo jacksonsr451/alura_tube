@@ -1,5 +1,9 @@
 import { StyledMenu } from "../ui/styledMenu"
 import Search from "./search"
+import Switch from 'react-switch'
+import { shade } from "polished"
+import { ThemeContext } from "styled-components"
+import { useContext } from "react"
 
 const Logo = () => {
     return (
@@ -15,13 +19,26 @@ const Logo = () => {
     )
 }
 
-const Menu = ({filterValues, setFilterValues}) => {
+const Menu = ({toggleTheme, filterValues, setFilterValues}) => {
+    const { colors, title } = useContext(ThemeContext)
+
     return (
         <StyledMenu>
             <div>
               <Logo />
             </div>
-            <Search filterValues={filterValues} setFilterValues={setFilterValues}/>
+            <div className="rigth">
+                <Search filterValues={filterValues} setFilterValues={setFilterValues}/>
+                <Switch 
+                    onChange={toggleTheme}
+                    checked={title === 'dark'}
+                    checkedIcon={false}
+                    uncheckedIcon={false}
+                    height={30}
+                    width={55}
+                    handleDiameter={30}
+                />
+            </div>
         </StyledMenu>
     )
 }

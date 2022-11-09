@@ -5,8 +5,8 @@ export const StyledMenu = styled.header`
   flex-direction: row;
   height: 56px;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.backgroundLevel1 || "#FFFFFF"};
-  border: 1px solid ${({ theme }) => theme.borderBase || "#e5e5e5"};
+  background-color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.text};
   align-items: center;
   padding: 0 16px;
   gap: 16px;
@@ -19,7 +19,15 @@ export const StyledMenu = styled.header`
       max-width: 127px;
     }
     .text {
-      fill: ${({ theme }) => theme.textColorBase || "#222222"};
+      fill: ${(props) => props.theme.colors.text};
     }
+  }
+
+  .rigth {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    justify-content: right;
   }
 `

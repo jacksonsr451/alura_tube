@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-  /* Reset */
   * {
     margin: 0;
     padding: 0;
@@ -9,8 +8,10 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: sans-serif;
+    background-color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};
   }
-  /* NextJS */
+  
   html {
     display: flex;
     flex-direction: column;
@@ -24,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex: 1;
   }
-  /* Globals */
+  
   button,
   a {
     text-decoration: none;
