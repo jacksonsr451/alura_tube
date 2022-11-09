@@ -1,6 +1,12 @@
+import React from "react"
 import { StyledTimeline } from "../ui/styledTimeLine"
 
-const TimeLine = ({ filterValues, ...props }) => {
+interface Props {
+    filterValues: string,
+    playlists: []
+}
+
+const TimeLine: React.FC<Props> = ({ filterValues, ...props }) => {
     const playlistNames = Object.keys(props.playlists)
 
     return (
