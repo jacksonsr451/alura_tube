@@ -1,9 +1,6 @@
 import { StyledMenu } from "../ui/styledMenu"
 import Search from "./search"
-import Switch from 'react-switch'
-import { shade } from "polished"
-import { ThemeContext } from "styled-components"
-import { useContext } from "react"
+import DarkModeSwitch from "./DarkModeSwitch"
 
 const Logo = () => {
     return (
@@ -19,8 +16,7 @@ const Logo = () => {
     )
 }
 
-const Menu = ({toggleTheme, filterValues, setFilterValues}) => {
-    const { colors, title } = useContext(ThemeContext)
+const Menu = ({filterValues, setFilterValues}) => {
 
     return (
         <StyledMenu>
@@ -29,15 +25,7 @@ const Menu = ({toggleTheme, filterValues, setFilterValues}) => {
             </div>
             <div className="rigth">
                 <Search filterValues={filterValues} setFilterValues={setFilterValues}/>
-                <Switch 
-                    onChange={toggleTheme}
-                    checked={title === 'dark'}
-                    checkedIcon={false}
-                    uncheckedIcon={false}
-                    height={30}
-                    width={55}
-                    handleDiameter={30}
-                />
+                <DarkModeSwitch />
             </div>
         </StyledMenu>
     )

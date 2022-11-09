@@ -1,27 +1,27 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { ThemeProvider } from "styled-components"
-import light from "../src/ui/theme/light"
-import dark from "../src/ui/theme/dark"
 import { GlobalStyle } from "../src/ui/globalStyles"
-import usePersistedState from "../src/utils/usePersistedState"
 import Menu from "../src/components/menu"
+import ProviderWrapper from "../src/providers/ProviderWrapper"
+import { ThemesColorsContext } from "../src/providers/ThemesColorsProvider"
 
-const App = ({Component, ...AppProps}) => {
-    const [filterValues, setFilterValues] = useState("");
-
-    const [theme, setTheme] = usePersistedState('theme', light)
-
-    const toggleTheme = () => {
-        setTheme(theme.title === 'light' ? dark : light)
-    }
+const MyApp = ({Component, ...AppProps}) => {
+    const [filterValues, setFilterValues] = useState("")
+    const theme = useContext(ThemesColorsContext)
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme.mode}>
             <GlobalStyle />
-            <Menu toggleTheme={toggleTheme} filterValues={filterValues} setFilterValues={setFilterValues}/>
+            <Menu filterValues={filterValues} setFilterValues={setFilterValues}/>
             <Component filterValues={filterValues} {...AppProps}/>
         </ThemeProvider>
     )
 }
 
-export default App
+export default function App(props) {
+    return (
+        <ProviderWrapper>
+            <MyApp {...props}/>
+        </ProviderWrapper>
+    )
+}

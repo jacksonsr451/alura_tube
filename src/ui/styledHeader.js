@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 export const StyledHeader = styled.div`
+    background-color: ${(props) => props.theme.colors.primary};
+
     .banner {
         display: inline-block;
         width: 100vw;
