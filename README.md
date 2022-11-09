@@ -1,7 +1,7 @@
 # alura_tube
 Projeto proposto pela Alura na imersão dev React
 
-Um projeto puchado para uma replica do YouTube.
+Um projeto puxado para uma replica do YouTube.
 
 ## Branchs
 
