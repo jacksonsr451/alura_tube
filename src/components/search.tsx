@@ -1,12 +1,12 @@
 import React, { Dispatch, SetStateAction } from "react"
 import { StyledSearch } from "../ui/styledSearch"
 
-interface Props {
+interface SearchProps {
     filterValues: string,
     setFilterValues: Dispatch<SetStateAction<string>>
 }
 
-const Search: React.FC<Props> = ({ filterValues, setFilterValues }) => {
+const Search: React.FC<SearchProps> = ({ filterValues, setFilterValues }) => {
     
     return (
         <StyledSearch>

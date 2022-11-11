@@ -3,7 +3,23 @@ import { StyledTimeline } from "../ui/styledTimeLine"
 
 interface Props {
     filterValues: string,
-    playlists: []
+    playlists: {
+        games: {
+            title: string;
+            url: string;
+            thumb: string;
+        }[];
+        "front-end": {
+            title: string;
+            url: string;
+            thumb: string;
+        }[];
+        "back-end": {
+            title: string;
+            url: string;
+            thumb: string;
+        }[];
+    }
 }
 
 const TimeLine: React.FC<Props> = ({ filterValues, ...props }) => {
